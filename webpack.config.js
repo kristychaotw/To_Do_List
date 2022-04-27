@@ -3,6 +3,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require('path');
 
 module.exports = {
+    mode:'development',
     entry: './src/index.js',
     output: {
         filename: 'main.[hash].js',
@@ -19,9 +20,18 @@ module.exports = {
             },
         ],
     },
+    devtool:'source-map'
+    ,
     plugins: [new HtmlWebpackPlugin({
         template: './base.html'
     }), new MiniCssExtractPlugin({
         filename:'main.[hash].css'
     })],
+    devServer: {
+        static: {
+          directory: path.join(__dirname, 'dist'),
+        },
+        compress: true,
+        port: 3000,
+    },
 };
