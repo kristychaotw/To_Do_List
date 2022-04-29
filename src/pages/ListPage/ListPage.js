@@ -5,7 +5,7 @@ import ItemList from "./components/ItemList";
 
 const LOCAL_KEY = "todoApp.todos"
 
-export default function ListPage() {
+export default function ListPage({handlePage}) {
   const [ todos, setTodos]=useState([])
   
   useEffect(()=>{
@@ -26,13 +26,19 @@ export default function ListPage() {
     setTodos(newTodos)
   }
 
+  function handleGoIndexClick(){
+    handlePage("homePage")
+  }
+
   return (
       <>
-      <div>ListPage</div>
+      <div><h2>My To-Do List</h2></div>
       <Edit setTodos={setTodos}/>
-      <ItemList todos={todos} deleteTodo={deleteTodo} />
+      <ItemList className="txt" todos={todos} deleteTodo={deleteTodo} />
       <hr></hr>
-      <div> {todos.filter(todo=>!todo.complete).length} Left to Do </div>
+      <div className="txt"> {todos.filter(todo=>!todo.complete).length} Left to Do</div>
+      <hr></hr>
+      <button onClick={handleGoIndexClick}>返回首頁</button>
     </>
     )
 }

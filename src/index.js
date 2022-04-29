@@ -1,16 +1,13 @@
-import "./index.css"
-import React from "react"
-import ReactDOM from "react-dom"
-import App from "./pages/App"
-
-
+import "./index.css";
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./pages/App";
 
 console.log("test");
 
-
 ReactDOM.render(
-        <React.StrictMode>
-            <App />
-        </React.StrictMode>,document.querySelector("#root"))
-
-
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.querySelector("#root")
+);

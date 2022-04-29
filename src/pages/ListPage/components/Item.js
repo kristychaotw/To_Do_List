@@ -4,9 +4,9 @@ export default function Item({ todo, deleteTodo }) {
     function handleDeleteClick(){
         deleteTodo(todo.id)
     }  
-    
+
     return (
-    <div>
+    <div className="todoTxt">
       <label>
           {todo.name}
           <button onClick={handleDeleteClick}>刪除</button>

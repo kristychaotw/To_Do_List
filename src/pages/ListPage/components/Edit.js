@@ -17,7 +17,6 @@ export default function Edit({setTodos}) {
   
     return (
     <>
-      <div>edit</div>
       <input ref={todoNameRef} type="text"></input>
       <button onClick={handleAddTodo}>新增紀錄</button>
       <hr></hr>
