@@ -1,17 +1,16 @@
 import "./index.css"
 import React from "react"
 import ReactDOM from "react-dom"
+import App from "./pages/App"
+
 
 
 console.log("test");
 
-class MyHead extends React.Component{
-    constructor(props){
-        super(props);
-    }
-    render(){
-        return <h3>Hellooooo</h3>
-    }
-}
 
-ReactDOM.render(<MyHead/>,document.querySelector("#root"))
+ReactDOM.render(
+        <React.StrictMode>
+            <App />
+        </React.StrictMode>,document.querySelector("#root"))
+
+

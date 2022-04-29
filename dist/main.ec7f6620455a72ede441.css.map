@@ -1,0 +1,1 @@
+{"version":3,"file":"main.ec7f6620455a72ede441.css","mappings":";;;AAAA;IACI,oCAAoC;AACxC,C","sources":["webpack://todolist/./src/index.css"],"sourcesContent":["body{\r\n    background-color: rgb(247, 180, 173);\r\n}"],"names":[],"sourceRoot":""}
