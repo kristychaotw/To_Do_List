@@ -33,6 +33,7 @@
   "dependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^8.2.5",
+    "firebase": "^9.7.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.3.0",
