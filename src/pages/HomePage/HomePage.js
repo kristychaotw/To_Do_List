@@ -1,15 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-export default function HomePage({handlePage}) {
-  function handleStartClick(){
-    handlePage("listPage")
-  }
+export default function HomePage() {
 
   return (
     <>
-    <div><h2>React練習專案</h2></div>
+    <div><h2>React 練習專案</h2></div>
     <main>歡迎光臨我的頁面</main>
-    <button onClick={handleStartClick}>點此開始</button>
+    <button><Link to='/list'>點此開始</Link></button>
     </>
   )
 }

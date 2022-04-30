@@ -1,4 +1,5 @@
 import React , { useRef, useEffect} from "react";
+import { Link } from "react-router-dom";
 import {v4 as uuidv4} from "uuid"
 
 export default function Edit({setTodos}) {
@@ -18,7 +19,7 @@ export default function Edit({setTodos}) {
     return (
     <>
       <input ref={todoNameRef} type="text"></input>
-      <button onClick={handleAddTodo}>新增紀錄</button>
+      <button onClick={handleAddTodo}><Link to="">新增紀錄</Link></button>
       <hr></hr>
     </>
   );

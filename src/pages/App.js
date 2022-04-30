@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import HomePage from "./HomePage/HomePage";
 import ListPage from "./ListPage/ListPage";
 import NotFoundPage from "./NotFoundPage/NotFoundPage"
-import { BrowserRouter as Router, Route, Routes, useNavigate } from "react-router-dom";
+import { Routes,Route } from "react-router-dom";
 
 function App() {
   function handlePage(page) {
@@ -14,13 +14,12 @@ function App() {
 
   return (
       <>
-    <Router>
+      <div><h3>代辦清單</h3></div>
         <Routes>
           <Route path='*' element={<NotFoundPage />} />
-          {/* <Route path='/' element={<HomePage handlePage={handlePage} />} /> */}
-          <Route path='/' element={<ListPage handlePage={handlePage} />} />
+          <Route path='/' element={<HomePage />} />
+          <Route path='/list' element={<ListPage />} />
         </Routes>
-    </Router>
     </>
   );
   

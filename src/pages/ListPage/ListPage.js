@@ -1,11 +1,12 @@
 import React , { useState, useEffect } from "react";
 import Edit from "./components/Edit";
 import ItemList from "./components/ItemList";
+import { Link } from 'react-router-dom'
 
 
 const LOCAL_KEY = "todoApp.todos"
 
-export default function ListPage({handlePage}) {
+export default function ListPage() {
   const [ todos, setTodos]=useState([])
   
   useEffect(()=>{
@@ -26,19 +27,16 @@ export default function ListPage({handlePage}) {
     setTodos(newTodos)
   }
 
-  function handleGoIndexClick(){
-    handlePage("homePage")
-  }
 
   return (
       <>
       <div><h2>My To-Do List</h2></div>
       <Edit setTodos={setTodos}/>
-      <ItemList className="txt" todos={todos} deleteTodo={deleteTodo} />
+      <ItemList todos={todos} deleteTodo={deleteTodo} />
       <hr></hr>
       <div className="txt"> {todos.filter(todo=>!todo.complete).length} Left to Do</div>
       <hr></hr>
-      <button onClick={handleGoIndexClick}>返回首頁</button>
+      <button><Link to="/">返回首頁</Link></button>
     </>
     )
 }
