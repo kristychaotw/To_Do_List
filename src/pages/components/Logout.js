@@ -16,7 +16,7 @@ export function LogoutBtn() {
       }
   return (
       <>
-        <button disabled={loading || !currentUser} onClick={handleLogout}>
+        <button className="mb-20" disabled={loading || !currentUser} onClick={handleLogout}>
           登出
         </button>
         </>

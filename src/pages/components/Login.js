@@ -1,8 +1,10 @@
 import React from "react";
 import { useState, useRef } from "react";
 import { useAuth, login } from "../firebase";
+import { Link } from "react-router-dom";
 
-export function LoginBtn() {
+
+export function LoginBtn({changeForm}) {
   const emailRef = useRef();
   const passwordRef = useRef();
   const [loading, setLoading] = useState(false);
@@ -17,19 +19,23 @@ export function LoginBtn() {
     }
     setLoading(false);
   }
+
+  function handleForm(){
+    changeForm(false)
+  }
+ 
   return (
     <>
-      <div>登入狀態 : {currentUser?.email}</div>
       <h4>登入</h4>
       <input ref={emailRef} type="email" placeholder="Email" />
       <br />
       <input ref={passwordRef} type="password" placeholder="Password" />
       <br />
-      <button disabled={loading || currentUser} onClick={handleLogin}>
+      <button  className="mb-20" disabled={loading || currentUser} onClick={handleLogin}>
         登入
       </button>
       <div>
-        沒有帳號？<span>點此註冊</span>
+        沒有帳號？ <span onClick={handleForm}>點此註冊</span>
       </div>
     </>
   );

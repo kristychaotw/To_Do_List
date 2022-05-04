@@ -10,6 +10,30 @@ body{
     margin: 0 auto;
 }
 
+.form{
+    display: none;
+}
+
+.form.active{
+    display: block;
+}
+
+.white-txt{
+    color: #1B4965;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+span{
+    text-decoration: underline;
+    color:#1B4965;
+    font-weight: 800;
+}
+
+.mb-20{
+    margin-bottom: 20px;
+}
+
 button{
     height: 34px;
     border-radius: 5px;
@@ -65,7 +89,7 @@ h4{
 }
 
 main{
-    padding: 60px 0 80px 0;
+    padding: 40px 0;
     color:#1B4965;
     font-weight: 600;
     font-size: 26px;

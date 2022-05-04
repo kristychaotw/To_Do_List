@@ -5,12 +5,6 @@ import NotFoundPage from "./NotFoundPage/NotFoundPage"
 import { Routes,Route } from "react-router-dom";
 
 function App() {
-  function handlePage(page) {
-      const goPage = page === "homePage" ?  "/" :"/list" 
-      console.log('goPage ',goPage);
-      location.href=goPage
-  }
-
 
   return (
       <>
