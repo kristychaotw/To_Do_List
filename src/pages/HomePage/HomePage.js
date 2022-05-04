@@ -1,7 +1,7 @@
 import React from 'react'
 import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { signup, useAuth, logout } from '../firebase'
+import { signup, useAuth, logout, login } from '../firebase'
 
 export default function HomePage() {
   const emailRef = useRef();
@@ -29,6 +29,16 @@ export default function HomePage() {
     setLoading(false);
   }
 
+  async function handleLogin(){
+    setLoading(true);
+    try{
+      await login(emailRef.current.value,passwordRef.current.value);
+    }catch{
+      alert("Error!");
+    }
+    setLoading(false);
+  }
+
 
   return (
     <>
@@ -39,6 +49,7 @@ export default function HomePage() {
     <input ref={passwordRef} type="password" placeholder='Password' />
     <button disabled={loading || currentUser } onClick={handleSignup}>Sign Up</button>
     <button disabled={loading || !currentUser }onClick={handleLogout}>Log out</button>
+    <button disabled={loading || currentUser }onClick={handleLogin}>Log in</button>
     <button ><Link to='/list'>點此開始</Link></button>
     </>
   )
