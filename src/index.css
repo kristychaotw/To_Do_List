@@ -68,7 +68,7 @@ hr{
     max-width: 600px;
 }
 
-input[type=text]{
+input[type=text], input[type=email], input[type=password]{
     border:none;
     border-radius: 5px;
     padding:9px 10px;
