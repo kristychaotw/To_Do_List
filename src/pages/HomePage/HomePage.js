@@ -10,6 +10,7 @@ export default function HomePage() {
   const currentUser = useAuth();
   console.log("c-user:", currentUser);
 
+
   let [signupForm, setSignupForm] = useState(true);
 
   function changeForm(e) {

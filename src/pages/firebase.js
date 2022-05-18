@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithEmailAndPassword } from "firebase/auth";
+import { getFirestore} from "firebase/firestore"
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -19,8 +20,10 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
+export default getFirestore();
+
 export function signup(email,password){
-  return createUserWithEmailAndPassword(auth, email, password);
+  return createUserWithEmailAndPassword(auth, email, password)
 }
 
 export function logout(){
@@ -39,6 +42,7 @@ export function useAuth(){
   useEffect(()=>{
     const unsub = onAuthStateChanged(auth, user =>{ setCurrentUser(user)})
     return unsub
-  },[])
+  },[currentUser])
+
   return currentUser
 }
